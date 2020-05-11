@@ -15,11 +15,12 @@ const ovly = {
 					$("#moeda_destino").append(o);
 				}
 			}
-			$.get(this.domain + "latest", cb);
+			$.get("https://api.exchangeratesapi.io/" + "latest", cb);
 		},
 		chamarAPI: function (e) {
 			var dCotacao = $("#data_cotacao").val();
-			var endpoint = this.domain + (dCotacao?  dCotacao : "latest");
+			/* var endpoint = this.domain + (dCotacao?  dCotacao : "latest"); */
+			var endpoint = "https://api.exchangeratesapi.io/" + (dCotacao?  dCotacao : "latest");
 			var oParametros = {
 				base: $("#moeda_origem").val()
 			};
